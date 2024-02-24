@@ -1,0 +1,42 @@
+{
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/@ldf/server/^3.0.0/components/context.jsonld",
+  "@id": "urn:ldf-server:my",
+  "import": "preset-qpf:config-defaults.json",
+
+  "title": "Linked Data Fragments server Deutschland",
+
+  "datasources": [
+    {
+      "@id": "govdata.de",
+      "@type": "SparqlDatasource",
+      "datasourceTitle": "GovData Metadata",
+      "description": "govdata.de Metadata SPARQL",
+      "datasourcePath": "govdata-sparql",
+      "sparqlEndpoint": "https://www.govdata.de/sparql"
+    },
+    {
+      "@id": "http://dcat-ap.de/def/politicalGeocoding/districtKey",
+      "@type": "TurtleDatasource",
+      "datasourceTitle": "Kreise Deutschlands",
+      "description": "Kreise Deutschlands laut Statistischem Bundesamt",
+      "datasourcePath": "kreise-deutschland",
+			"file": "data/kreise.ttl"
+    },
+    {
+      "@id": "http://dcat-ap.de/def/politicalGeocoding/stateKey",
+      "@type": "TurtleDatasource",
+      "datasourceTitle": "Bundesländer Deutschlands",
+      "description": "Bundesländer Deutschlands laut Statistischem Bundesamt",
+      "datasourcePath": "bundeslaender-deutschland",
+			"file": "data/bundeslaender.ttl"
+    },
+    {
+      "@id": "http://dcat-ap.de/def/politicalGeocoding/regionalKey",
+      "@type": "TurtleDatasource",
+      "datasourceTitle": "Regionalschluessel Deutschlands",
+      "description": "Regionalschluessel Deutschlands laut Statistischem Bundesamt",
+      "datasourcePath": "regionalschluessel-deutschland",
+			"file": "data/regionalschluessel.ttl"
+    }
+  ]
+}

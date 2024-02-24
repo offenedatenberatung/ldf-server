@@ -1,0 +1,14 @@
+{
+  "name": "ldf_server",
+  "version": "0.0.1",
+  "description": "Linked Data Fragments Server für Deutschland",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js ./config.json 10000 1"
+  },
+  "author": "Mila Frerichs",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@ldf/server": "^3.3.0"
+  }
+}
