@@ -41,8 +41,8 @@
     {
       "@id": "https://lod-moers.onrender.com/statistiken/datasets/bevoelkerung/geburten/",
       "@type": "TurtleDatasource",
-      "datasourceTitle": "Moers Statistiken Bevölkerung: Geburten",
-      "description": "",
+      "datasourceTitle": "Moers Statistiken Bevölkerung Geburten",
+      "description": "Geburten in Moers",
       "datasourcePath": "moers-geburten",
       "file": "data/moers-geburten.ttl"
     },

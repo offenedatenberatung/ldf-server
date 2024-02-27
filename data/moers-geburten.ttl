@@ -1,13 +1,13 @@
-@base <http://onto.strinz.me/dc/dataset/entwicklung_geburten_uri/> .
-@prefix ns:    <http://onto.strinz.me/dc/dataset/entwicklung_geburten_uri/> .
+@base <https://lod-moers.onrender.com/dc/dataset/entwicklung_geburten_uri/> .
+@prefix ns:    <https://lod-moers.onrender.com/dc/dataset/entwicklung_geburten_uri/> .
 @prefix qb:    <http://purl.org/linked-data/cube#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix prop:  <http://onto.strinz.me/properties/> .
+@prefix prop:  <https://lod-moers.onrender.com/properties/> .
 @prefix dct:   <http://purl.org/dc/terms/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix cs:    <http://onto.strinz.me/dc/dataset/entwicklung_geburten_uri/cs/> .
-@prefix code:  <http://onto.strinz.me/dc/dataset/entwicklung_geburten_uri/code/> .
+@prefix cs:    <https://lod-moers.onrender.com/dc/dataset/entwicklung_geburten_uri/cs/> .
+@prefix code:  <https://lod-moers.onrender.com/dc/dataset/entwicklung_geburten_uri/code/> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix foaf:     <http://xmlns.com/foaf/0.1/> .
@@ -40,29 +40,29 @@ prop:jahr a rdf:Property, qb:DimensionProperty ;
 
 prop:sozialraum a rdf:Property, qb:DimensionProperty ;
   rdfs:label "sozialraum"@de ;
-  qb:codeList Sozialraum ;
-  rdfs:range  .
+  qb:codeList code:sozialraum ;
+  rdfs:range code:Sozialraum .
 
 prop:value a rdf:Property, qb:MeasureProperty ;
   rdfs:label "value"@de .
 
-a rdfs:Class, owl:Class;
- rdfs:subClassOf skos:Concept ;
- rdfs:label "Code list for Sozialraum - codelist class"@de;
- rdfs:comment "Specifies the Sozialraum for each observation";
- rdfs:seeAlso Sozialraum .
+code:Sozialraum a rdfs:Class, owl:Class;
+  rdfs:subClassOf skos:Concept ;
+  rdfs:label "Code list for sozialraum - codelist class"@de;
+  rdfs:comment "Specifies the sozialraum for each observation";
+  rdfs:seeAlso code:sozialraum .
 
-            Sozialraum a skos:ConceptScheme;
- skos:prefLabel "Code list for Sozialraum - codelist scheme"@de;
- rdfs:label "Code list for Sozialraum - codelist scheme"@de;
- skos:notation "CL_SOZIALRAUM";
- skos:note "Specifies the Sozialraum for each observation";
-  skos:hasTopConcept Ohne_Angabe ;
+code:sozialraum a skos:ConceptScheme;
+  skos:prefLabel "Code list for sozialraum - codelist scheme"@de;
+  rdfs:label "Code list for sozialraum - codelist scheme"@de;
+  skos:notation "CL_SOZIALRAUM";
+  skos:note "Specifies the sozialraum for each observation";
+  skos:hasTopConcept <code/sozialraum/Ohne_Angabe> ;
   skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
   skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
   skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
   skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
-  skos:hasTopConcept Ost_-_Moers-Ost ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
   skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
   skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
@@ -73,81 +73,81 @@ a rdfs:Class, owl:Class;
   skos:hasTopConcept <https://lod-moers.onrender.com/moers> ;
   .
 
-Ohne_Angabe a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
-  skos:prefLabel "Ohne Angabe" ;
-  skos:inScheme Sozialraum .
+<code/sozialraum/Ohne_Angabe> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "Ohne_Angabe" ;
+  skos:inScheme code:sozialraum .
 
-<https://lod-moers.onrender.com/sozialraum/nord/repelen/> a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
+<https://lod-moers.onrender.com/sozialraum/nord/repelen/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
   skos:prefLabel "repelen" ;
-  skos:inScheme Sozialraum .
+  skos:inScheme code:sozialraum .
 
-<https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
+<https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
   skos:prefLabel "rheinkamp" ;
-  skos:inScheme Sozialraum .
+  skos:inScheme code:sozialraum .
 
-<https://lod-moers.onrender.com/sozialraum/nord/eick/> a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
+<https://lod-moers.onrender.com/sozialraum/nord/eick/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
   skos:prefLabel "eick" ;
-  skos:inScheme Sozialraum .
+  skos:inScheme code:sozialraum .
 
-<https://lod-moers.onrender.com/sozialraum/ost/utfort/> a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
+<https://lod-moers.onrender.com/sozialraum/ost/utfort/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
   skos:prefLabel "utfort" ;
-  skos:inScheme Sozialraum .
+  skos:inScheme code:sozialraum .
 
-Ost_-_Moers-Ost a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
-  skos:prefLabel "Ost - Moers-Ost" ;
-  skos:inScheme Sozialraum .
+<https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "moers-ost" ;
+  skos:inScheme code:sozialraum .
 
-<https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
+<https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
   skos:prefLabel "meerbeck" ;
-  skos:inScheme Sozialraum .
+  skos:inScheme code:sozialraum .
 
-<https://lod-moers.onrender.com/sozialraum/ost/asberg/> a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
+<https://lod-moers.onrender.com/sozialraum/ost/asberg/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
   skos:prefLabel "asberg" ;
-  skos:inScheme Sozialraum .
+  skos:inScheme code:sozialraum .
 
-<https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
+<https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
   skos:prefLabel "huelsdonk" ;
-  skos:inScheme Sozialraum .
+  skos:inScheme code:sozialraum .
 
-<https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
+<https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
   skos:prefLabel "moers-mitte" ;
-  skos:inScheme Sozialraum .
+  skos:inScheme code:sozialraum .
 
-<https://lod-moers.onrender.com/sozialraum/mitte/vinn/> a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
+<https://lod-moers.onrender.com/sozialraum/mitte/vinn/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
   skos:prefLabel "vinn" ;
-  skos:inScheme Sozialraum .
+  skos:inScheme code:sozialraum .
 
-<https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
+<https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
   skos:prefLabel "schwafheim" ;
-  skos:inScheme Sozialraum .
+  skos:inScheme code:sozialraum .
 
-<https://lod-moers.onrender.com/sozialraum/kapellen/> a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
+<https://lod-moers.onrender.com/sozialraum/kapellen/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
   skos:prefLabel "kapellen" ;
-  skos:inScheme Sozialraum .
+  skos:inScheme code:sozialraum .
 
-<https://lod-moers.onrender.com/moers> a skos:Concept, ;
-  skos:topConceptOf Sozialraum ;
+<https://lod-moers.onrender.com/moers> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
   skos:prefLabel "moers" ;
-  skos:inScheme Sozialraum .
+  skos:inScheme code:sozialraum .
 
 ns:obs1 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "1" ;
   prop:jahr 2001 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -155,7 +155,7 @@ ns:obs2 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "2" ;
   prop:jahr 2002 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 1 ;
   .
 
@@ -163,7 +163,7 @@ ns:obs3 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "3" ;
   prop:jahr 2003 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -171,7 +171,7 @@ ns:obs4 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "4" ;
   prop:jahr 2004 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -179,7 +179,7 @@ ns:obs5 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "5" ;
   prop:jahr 2005 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -187,7 +187,7 @@ ns:obs6 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "6" ;
   prop:jahr 2006 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -195,7 +195,7 @@ ns:obs7 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "7" ;
   prop:jahr 2007 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -203,7 +203,7 @@ ns:obs8 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "8" ;
   prop:jahr 2008 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -211,7 +211,7 @@ ns:obs9 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "9" ;
   prop:jahr 2009 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -219,7 +219,7 @@ ns:obs10 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "10" ;
   prop:jahr 2010 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -227,7 +227,7 @@ ns:obs11 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "11" ;
   prop:jahr 2011 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -235,7 +235,7 @@ ns:obs12 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "12" ;
   prop:jahr 2012 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -243,7 +243,7 @@ ns:obs13 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "13" ;
   prop:jahr 2013 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -251,7 +251,7 @@ ns:obs14 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "14" ;
   prop:jahr 2014 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -259,7 +259,7 @@ ns:obs15 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "15" ;
   prop:jahr 2015 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -267,7 +267,7 @@ ns:obs16 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "16" ;
   prop:jahr 2016 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -275,7 +275,7 @@ ns:obs17 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "17" ;
   prop:jahr 2017 ;
-  prop:sozialraum "Ohne Angabe" ;
+  prop:sozialraum <code/sozialraum/Ohne_Angabe> ;
   prop:value 0 ;
   .
 
@@ -827,7 +827,7 @@ ns:obs86 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "86" ;
   prop:jahr 2001 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 73 ;
   .
 
@@ -835,7 +835,7 @@ ns:obs87 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "87" ;
   prop:jahr 2002 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 64 ;
   .
 
@@ -843,7 +843,7 @@ ns:obs88 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "88" ;
   prop:jahr 2003 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 68 ;
   .
 
@@ -851,7 +851,7 @@ ns:obs89 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "89" ;
   prop:jahr 2004 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 68 ;
   .
 
@@ -859,7 +859,7 @@ ns:obs90 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "90" ;
   prop:jahr 2005 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 72 ;
   .
 
@@ -867,7 +867,7 @@ ns:obs91 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "91" ;
   prop:jahr 2006 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 59 ;
   .
 
@@ -875,7 +875,7 @@ ns:obs92 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "92" ;
   prop:jahr 2007 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 67 ;
   .
 
@@ -883,7 +883,7 @@ ns:obs93 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "93" ;
   prop:jahr 2008 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 88 ;
   .
 
@@ -891,7 +891,7 @@ ns:obs94 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "94" ;
   prop:jahr 2009 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 75 ;
   .
 
@@ -899,7 +899,7 @@ ns:obs95 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "95" ;
   prop:jahr 2010 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 93 ;
   .
 
@@ -907,7 +907,7 @@ ns:obs96 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "96" ;
   prop:jahr 2011 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 77 ;
   .
 
@@ -915,7 +915,7 @@ ns:obs97 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "97" ;
   prop:jahr 2012 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 91 ;
   .
 
@@ -923,7 +923,7 @@ ns:obs98 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "98" ;
   prop:jahr 2013 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 83 ;
   .
 
@@ -931,7 +931,7 @@ ns:obs99 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "99" ;
   prop:jahr 2014 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 95 ;
   .
 
@@ -939,7 +939,7 @@ ns:obs100 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "100" ;
   prop:jahr 2015 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 73 ;
   .
 
@@ -947,7 +947,7 @@ ns:obs101 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "101" ;
   prop:jahr 2016 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 114 ;
   .
 
@@ -955,7 +955,7 @@ ns:obs102 a qb:Observation ;
   qb:dataSet ns:dataset-entwicklung_geburten_uri ;
   rdfs:label "102" ;
   prop:jahr 2017 ;
-  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
   prop:value 111 ;
   .
 
