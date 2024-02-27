@@ -37,6 +37,14 @@
       "description": "Regionalschluessel Deutschlands laut Statistischem Bundesamt",
       "datasourcePath": "regionalschluessel-deutschland",
 			"file": "data/regionalschluessel.ttl"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/nord/repelen/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Repellen",
+      "description": "",
+      "datasourcePath": "moers-repellen",
+      "file": "https://lod-moers.onrender.com/sozialraum/nord/repelen/"
     }
   ]
 }
