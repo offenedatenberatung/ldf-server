@@ -39,6 +39,14 @@
 			"file": "data/regionalschluessel.ttl"
     },
     {
+      "@id": "https://lod-moers.onrender.com/statistiken/datasets/bevoelkerung/geburten/",
+      "@type": "TurtleDatasource",
+      "datasourceTitle": "Moers Statistiken Bevölkerung: Geburten",
+      "description": "",
+      "datasourcePath": "moers-geburten",
+      "file": "data/moers-geburten.ttl"
+    },
+    {
       "@id": "https://lod-moers.onrender.com/sozialraum/nord/repelen/",
       "@type": "RdfaDatasource",
       "datasourceTitle": "Sozialraum Repellen",

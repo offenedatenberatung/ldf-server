@@ -1,0 +1,2049 @@
+@base <http://onto.strinz.me/dc/dataset/entwicklung_geburten_uri/> .
+@prefix ns:    <http://onto.strinz.me/dc/dataset/entwicklung_geburten_uri/> .
+@prefix qb:    <http://purl.org/linked-data/cube#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prop:  <http://onto.strinz.me/properties/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix cs:    <http://onto.strinz.me/dc/dataset/entwicklung_geburten_uri/cs/> .
+@prefix code:  <http://onto.strinz.me/dc/dataset/entwicklung_geburten_uri/code/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix org:      <http://www.w3.org/ns/org#> .
+@prefix prov:     <http://www.w3.org/ns/prov#> .
+
+ns:dsd-entwicklung_geburten_uri a qb:DataStructureDefinition;
+  qb:component cs:jahr ;
+  qb:component cs:sozialraum ;
+  qb:component cs:value .
+
+ns:dataset-entwicklung_geburten_uri a qb:DataSet ;
+  rdfs:label "entwicklung_geburten_uri"@de ;
+  qb:structure ns:dsd-entwicklung_geburten_uri .
+
+cs:jahr a qb:ComponentSpecification ;
+  rdfs:label "jahr" ;
+  qb:dimension prop:jahr .
+
+cs:sozialraum a qb:ComponentSpecification ;
+  rdfs:label "sozialraum" ;
+  qb:dimension prop:sozialraum .
+
+cs:value a qb:ComponentSpecification ;
+  rdfs:label "value" ;
+  qb:measure prop:value .
+
+prop:jahr a rdf:Property, qb:DimensionProperty ;
+  rdfs:label "jahr"@de .
+
+prop:sozialraum a rdf:Property, qb:DimensionProperty ;
+  rdfs:label "sozialraum"@de ;
+  qb:codeList Sozialraum ;
+  rdfs:range  .
+
+prop:value a rdf:Property, qb:MeasureProperty ;
+  rdfs:label "value"@de .
+
+a rdfs:Class, owl:Class;
+ rdfs:subClassOf skos:Concept ;
+ rdfs:label "Code list for Sozialraum - codelist class"@de;
+ rdfs:comment "Specifies the Sozialraum for each observation";
+ rdfs:seeAlso Sozialraum .
+
+            Sozialraum a skos:ConceptScheme;
+ skos:prefLabel "Code list for Sozialraum - codelist scheme"@de;
+ rdfs:label "Code list for Sozialraum - codelist scheme"@de;
+ skos:notation "CL_SOZIALRAUM";
+ skos:note "Specifies the Sozialraum for each observation";
+  skos:hasTopConcept Ohne_Angabe ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  skos:hasTopConcept Ost_-_Moers-Ost ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/moers> ;
+  .
+
+Ohne_Angabe a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "Ohne Angabe" ;
+  skos:inScheme Sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/nord/repelen/> a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "repelen" ;
+  skos:inScheme Sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "rheinkamp" ;
+  skos:inScheme Sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/nord/eick/> a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "eick" ;
+  skos:inScheme Sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/ost/utfort/> a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "utfort" ;
+  skos:inScheme Sozialraum .
+
+Ost_-_Moers-Ost a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "Ost - Moers-Ost" ;
+  skos:inScheme Sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "meerbeck" ;
+  skos:inScheme Sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/ost/asberg/> a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "asberg" ;
+  skos:inScheme Sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "huelsdonk" ;
+  skos:inScheme Sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "moers-mitte" ;
+  skos:inScheme Sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/mitte/vinn/> a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "vinn" ;
+  skos:inScheme Sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "schwafheim" ;
+  skos:inScheme Sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/kapellen/> a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "kapellen" ;
+  skos:inScheme Sozialraum .
+
+<https://lod-moers.onrender.com/moers> a skos:Concept, ;
+  skos:topConceptOf Sozialraum ;
+  skos:prefLabel "moers" ;
+  skos:inScheme Sozialraum .
+
+ns:obs1 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "1" ;
+  prop:jahr 2001 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs2 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "2" ;
+  prop:jahr 2002 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 1 ;
+  .
+
+ns:obs3 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "3" ;
+  prop:jahr 2003 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs4 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "4" ;
+  prop:jahr 2004 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs5 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "5" ;
+  prop:jahr 2005 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs6 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "6" ;
+  prop:jahr 2006 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs7 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "7" ;
+  prop:jahr 2007 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs8 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "8" ;
+  prop:jahr 2008 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs9 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "9" ;
+  prop:jahr 2009 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs10 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "10" ;
+  prop:jahr 2010 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs11 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "11" ;
+  prop:jahr 2011 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs12 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "12" ;
+  prop:jahr 2012 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs13 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "13" ;
+  prop:jahr 2013 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs14 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "14" ;
+  prop:jahr 2014 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs15 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "15" ;
+  prop:jahr 2015 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs16 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "16" ;
+  prop:jahr 2016 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs17 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "17" ;
+  prop:jahr 2017 ;
+  prop:sozialraum "Ohne Angabe" ;
+  prop:value 0 ;
+  .
+
+ns:obs18 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "18" ;
+  prop:jahr 2001 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 111 ;
+  .
+
+ns:obs19 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "19" ;
+  prop:jahr 2002 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 97 ;
+  .
+
+ns:obs20 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "20" ;
+  prop:jahr 2003 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 113 ;
+  .
+
+ns:obs21 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "21" ;
+  prop:jahr 2004 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 119 ;
+  .
+
+ns:obs22 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "22" ;
+  prop:jahr 2005 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 114 ;
+  .
+
+ns:obs23 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "23" ;
+  prop:jahr 2006 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 100 ;
+  .
+
+ns:obs24 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "24" ;
+  prop:jahr 2007 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 96 ;
+  .
+
+ns:obs25 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "25" ;
+  prop:jahr 2008 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 105 ;
+  .
+
+ns:obs26 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "26" ;
+  prop:jahr 2009 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 98 ;
+  .
+
+ns:obs27 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "27" ;
+  prop:jahr 2010 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 77 ;
+  .
+
+ns:obs28 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "28" ;
+  prop:jahr 2011 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 84 ;
+  .
+
+ns:obs29 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "29" ;
+  prop:jahr 2012 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 88 ;
+  .
+
+ns:obs30 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "30" ;
+  prop:jahr 2013 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 91 ;
+  .
+
+ns:obs31 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "31" ;
+  prop:jahr 2014 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 90 ;
+  .
+
+ns:obs32 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "32" ;
+  prop:jahr 2015 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 94 ;
+  .
+
+ns:obs33 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "33" ;
+  prop:jahr 2016 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 106 ;
+  .
+
+ns:obs34 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "34" ;
+  prop:jahr 2017 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:value 94 ;
+  .
+
+ns:obs35 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "35" ;
+  prop:jahr 2001 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 34 ;
+  .
+
+ns:obs36 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "36" ;
+  prop:jahr 2002 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 46 ;
+  .
+
+ns:obs37 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "37" ;
+  prop:jahr 2003 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 35 ;
+  .
+
+ns:obs38 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "38" ;
+  prop:jahr 2004 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 33 ;
+  .
+
+ns:obs39 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "39" ;
+  prop:jahr 2005 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 37 ;
+  .
+
+ns:obs40 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "40" ;
+  prop:jahr 2006 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 31 ;
+  .
+
+ns:obs41 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "41" ;
+  prop:jahr 2007 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 30 ;
+  .
+
+ns:obs42 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "42" ;
+  prop:jahr 2008 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 43 ;
+  .
+
+ns:obs43 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "43" ;
+  prop:jahr 2009 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 22 ;
+  .
+
+ns:obs44 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "44" ;
+  prop:jahr 2010 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 37 ;
+  .
+
+ns:obs45 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "45" ;
+  prop:jahr 2011 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 30 ;
+  .
+
+ns:obs46 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "46" ;
+  prop:jahr 2012 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 35 ;
+  .
+
+ns:obs47 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "47" ;
+  prop:jahr 2013 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 37 ;
+  .
+
+ns:obs48 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "48" ;
+  prop:jahr 2014 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 41 ;
+  .
+
+ns:obs49 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "49" ;
+  prop:jahr 2015 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 35 ;
+  .
+
+ns:obs50 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "50" ;
+  prop:jahr 2016 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 39 ;
+  .
+
+ns:obs51 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "51" ;
+  prop:jahr 2017 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:value 41 ;
+  .
+
+ns:obs52 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "52" ;
+  prop:jahr 2001 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 45 ;
+  .
+
+ns:obs53 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "53" ;
+  prop:jahr 2002 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 39 ;
+  .
+
+ns:obs54 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "54" ;
+  prop:jahr 2003 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 45 ;
+  .
+
+ns:obs55 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "55" ;
+  prop:jahr 2004 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 46 ;
+  .
+
+ns:obs56 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "56" ;
+  prop:jahr 2005 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 32 ;
+  .
+
+ns:obs57 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "57" ;
+  prop:jahr 2006 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 28 ;
+  .
+
+ns:obs58 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "58" ;
+  prop:jahr 2007 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 32 ;
+  .
+
+ns:obs59 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "59" ;
+  prop:jahr 2008 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 36 ;
+  .
+
+ns:obs60 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "60" ;
+  prop:jahr 2009 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 30 ;
+  .
+
+ns:obs61 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "61" ;
+  prop:jahr 2010 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 32 ;
+  .
+
+ns:obs62 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "62" ;
+  prop:jahr 2011 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 46 ;
+  .
+
+ns:obs63 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "63" ;
+  prop:jahr 2012 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 32 ;
+  .
+
+ns:obs64 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "64" ;
+  prop:jahr 2013 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 38 ;
+  .
+
+ns:obs65 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "65" ;
+  prop:jahr 2014 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 24 ;
+  .
+
+ns:obs66 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "66" ;
+  prop:jahr 2015 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 34 ;
+  .
+
+ns:obs67 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "67" ;
+  prop:jahr 2016 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 43 ;
+  .
+
+ns:obs68 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "68" ;
+  prop:jahr 2017 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:value 39 ;
+  .
+
+ns:obs69 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "69" ;
+  prop:jahr 2001 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 32 ;
+  .
+
+ns:obs70 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "70" ;
+  prop:jahr 2002 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 40 ;
+  .
+
+ns:obs71 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "71" ;
+  prop:jahr 2003 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 35 ;
+  .
+
+ns:obs72 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "72" ;
+  prop:jahr 2004 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 41 ;
+  .
+
+ns:obs73 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "73" ;
+  prop:jahr 2005 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 46 ;
+  .
+
+ns:obs74 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "74" ;
+  prop:jahr 2006 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 34 ;
+  .
+
+ns:obs75 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "75" ;
+  prop:jahr 2007 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 38 ;
+  .
+
+ns:obs76 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "76" ;
+  prop:jahr 2008 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 33 ;
+  .
+
+ns:obs77 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "77" ;
+  prop:jahr 2009 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 46 ;
+  .
+
+ns:obs78 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "78" ;
+  prop:jahr 2010 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 29 ;
+  .
+
+ns:obs79 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "79" ;
+  prop:jahr 2011 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 36 ;
+  .
+
+ns:obs80 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "80" ;
+  prop:jahr 2012 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 36 ;
+  .
+
+ns:obs81 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "81" ;
+  prop:jahr 2013 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 32 ;
+  .
+
+ns:obs82 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "82" ;
+  prop:jahr 2014 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 32 ;
+  .
+
+ns:obs83 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "83" ;
+  prop:jahr 2015 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 36 ;
+  .
+
+ns:obs84 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "84" ;
+  prop:jahr 2016 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 31 ;
+  .
+
+ns:obs85 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "85" ;
+  prop:jahr 2017 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:value 30 ;
+  .
+
+ns:obs86 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "86" ;
+  prop:jahr 2001 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 73 ;
+  .
+
+ns:obs87 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "87" ;
+  prop:jahr 2002 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 64 ;
+  .
+
+ns:obs88 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "88" ;
+  prop:jahr 2003 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 68 ;
+  .
+
+ns:obs89 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "89" ;
+  prop:jahr 2004 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 68 ;
+  .
+
+ns:obs90 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "90" ;
+  prop:jahr 2005 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 72 ;
+  .
+
+ns:obs91 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "91" ;
+  prop:jahr 2006 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 59 ;
+  .
+
+ns:obs92 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "92" ;
+  prop:jahr 2007 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 67 ;
+  .
+
+ns:obs93 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "93" ;
+  prop:jahr 2008 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 88 ;
+  .
+
+ns:obs94 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "94" ;
+  prop:jahr 2009 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 75 ;
+  .
+
+ns:obs95 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "95" ;
+  prop:jahr 2010 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 93 ;
+  .
+
+ns:obs96 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "96" ;
+  prop:jahr 2011 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 77 ;
+  .
+
+ns:obs97 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "97" ;
+  prop:jahr 2012 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 91 ;
+  .
+
+ns:obs98 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "98" ;
+  prop:jahr 2013 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 83 ;
+  .
+
+ns:obs99 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "99" ;
+  prop:jahr 2014 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 95 ;
+  .
+
+ns:obs100 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "100" ;
+  prop:jahr 2015 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 73 ;
+  .
+
+ns:obs101 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "101" ;
+  prop:jahr 2016 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 114 ;
+  .
+
+ns:obs102 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "102" ;
+  prop:jahr 2017 ;
+  prop:sozialraum "Ost - Moers-Ost" ;
+  prop:value 111 ;
+  .
+
+ns:obs103 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "103" ;
+  prop:jahr 2001 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 113 ;
+  .
+
+ns:obs104 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "104" ;
+  prop:jahr 2002 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 117 ;
+  .
+
+ns:obs105 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "105" ;
+  prop:jahr 2003 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 112 ;
+  .
+
+ns:obs106 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "106" ;
+  prop:jahr 2004 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 125 ;
+  .
+
+ns:obs107 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "107" ;
+  prop:jahr 2005 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 103 ;
+  .
+
+ns:obs108 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "108" ;
+  prop:jahr 2006 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 105 ;
+  .
+
+ns:obs109 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "109" ;
+  prop:jahr 2007 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 92 ;
+  .
+
+ns:obs110 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "110" ;
+  prop:jahr 2008 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 98 ;
+  .
+
+ns:obs111 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "111" ;
+  prop:jahr 2009 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 105 ;
+  .
+
+ns:obs112 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "112" ;
+  prop:jahr 2010 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 92 ;
+  .
+
+ns:obs113 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "113" ;
+  prop:jahr 2011 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 94 ;
+  .
+
+ns:obs114 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "114" ;
+  prop:jahr 2012 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 94 ;
+  .
+
+ns:obs115 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "115" ;
+  prop:jahr 2013 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 113 ;
+  .
+
+ns:obs116 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "116" ;
+  prop:jahr 2014 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 90 ;
+  .
+
+ns:obs117 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "117" ;
+  prop:jahr 2015 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 108 ;
+  .
+
+ns:obs118 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "118" ;
+  prop:jahr 2016 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 110 ;
+  .
+
+ns:obs119 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "119" ;
+  prop:jahr 2017 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:value 137 ;
+  .
+
+ns:obs120 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "120" ;
+  prop:jahr 2001 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 107 ;
+  .
+
+ns:obs121 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "121" ;
+  prop:jahr 2002 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 107 ;
+  .
+
+ns:obs122 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "122" ;
+  prop:jahr 2003 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 115 ;
+  .
+
+ns:obs123 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "123" ;
+  prop:jahr 2004 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 121 ;
+  .
+
+ns:obs124 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "124" ;
+  prop:jahr 2005 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 104 ;
+  .
+
+ns:obs125 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "125" ;
+  prop:jahr 2006 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 90 ;
+  .
+
+ns:obs126 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "126" ;
+  prop:jahr 2007 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 110 ;
+  .
+
+ns:obs127 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "127" ;
+  prop:jahr 2008 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 105 ;
+  .
+
+ns:obs128 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "128" ;
+  prop:jahr 2009 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 105 ;
+  .
+
+ns:obs129 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "129" ;
+  prop:jahr 2010 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 96 ;
+  .
+
+ns:obs130 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "130" ;
+  prop:jahr 2011 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 98 ;
+  .
+
+ns:obs131 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "131" ;
+  prop:jahr 2012 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 92 ;
+  .
+
+ns:obs132 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "132" ;
+  prop:jahr 2013 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 86 ;
+  .
+
+ns:obs133 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "133" ;
+  prop:jahr 2014 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 93 ;
+  .
+
+ns:obs134 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "134" ;
+  prop:jahr 2015 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 110 ;
+  .
+
+ns:obs135 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "135" ;
+  prop:jahr 2016 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 120 ;
+  .
+
+ns:obs136 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "136" ;
+  prop:jahr 2017 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:value 120 ;
+  .
+
+ns:obs137 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "137" ;
+  prop:jahr 2001 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 40 ;
+  .
+
+ns:obs138 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "138" ;
+  prop:jahr 2002 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 43 ;
+  .
+
+ns:obs139 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "139" ;
+  prop:jahr 2003 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 42 ;
+  .
+
+ns:obs140 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "140" ;
+  prop:jahr 2004 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 40 ;
+  .
+
+ns:obs141 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "141" ;
+  prop:jahr 2005 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 29 ;
+  .
+
+ns:obs142 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "142" ;
+  prop:jahr 2006 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 47 ;
+  .
+
+ns:obs143 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "143" ;
+  prop:jahr 2007 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 37 ;
+  .
+
+ns:obs144 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "144" ;
+  prop:jahr 2008 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 31 ;
+  .
+
+ns:obs145 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "145" ;
+  prop:jahr 2009 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 27 ;
+  .
+
+ns:obs146 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "146" ;
+  prop:jahr 2010 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 34 ;
+  .
+
+ns:obs147 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "147" ;
+  prop:jahr 2011 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 39 ;
+  .
+
+ns:obs148 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "148" ;
+  prop:jahr 2012 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 39 ;
+  .
+
+ns:obs149 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "149" ;
+  prop:jahr 2013 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 44 ;
+  .
+
+ns:obs150 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "150" ;
+  prop:jahr 2014 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 39 ;
+  .
+
+ns:obs151 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "151" ;
+  prop:jahr 2015 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 36 ;
+  .
+
+ns:obs152 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "152" ;
+  prop:jahr 2016 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 38 ;
+  .
+
+ns:obs153 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "153" ;
+  prop:jahr 2017 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:value 56 ;
+  .
+
+ns:obs154 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "154" ;
+  prop:jahr 2001 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 84 ;
+  .
+
+ns:obs155 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "155" ;
+  prop:jahr 2002 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 87 ;
+  .
+
+ns:obs156 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "156" ;
+  prop:jahr 2003 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 69 ;
+  .
+
+ns:obs157 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "157" ;
+  prop:jahr 2004 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 78 ;
+  .
+
+ns:obs158 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "158" ;
+  prop:jahr 2005 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 86 ;
+  .
+
+ns:obs159 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "159" ;
+  prop:jahr 2006 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 75 ;
+  .
+
+ns:obs160 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "160" ;
+  prop:jahr 2007 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 62 ;
+  .
+
+ns:obs161 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "161" ;
+  prop:jahr 2008 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 76 ;
+  .
+
+ns:obs162 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "162" ;
+  prop:jahr 2009 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 66 ;
+  .
+
+ns:obs163 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "163" ;
+  prop:jahr 2010 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 87 ;
+  .
+
+ns:obs164 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "164" ;
+  prop:jahr 2011 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 74 ;
+  .
+
+ns:obs165 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "165" ;
+  prop:jahr 2012 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 61 ;
+  .
+
+ns:obs166 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "166" ;
+  prop:jahr 2013 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 69 ;
+  .
+
+ns:obs167 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "167" ;
+  prop:jahr 2014 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 63 ;
+  .
+
+ns:obs168 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "168" ;
+  prop:jahr 2015 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 83 ;
+  .
+
+ns:obs169 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "169" ;
+  prop:jahr 2016 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 75 ;
+  .
+
+ns:obs170 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "170" ;
+  prop:jahr 2017 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:value 77 ;
+  .
+
+ns:obs171 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "171" ;
+  prop:jahr 2001 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 75 ;
+  .
+
+ns:obs172 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "172" ;
+  prop:jahr 2002 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 80 ;
+  .
+
+ns:obs173 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "173" ;
+  prop:jahr 2003 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 61 ;
+  .
+
+ns:obs174 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "174" ;
+  prop:jahr 2004 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 82 ;
+  .
+
+ns:obs175 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "175" ;
+  prop:jahr 2005 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 92 ;
+  .
+
+ns:obs176 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "176" ;
+  prop:jahr 2006 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 74 ;
+  .
+
+ns:obs177 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "177" ;
+  prop:jahr 2007 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 90 ;
+  .
+
+ns:obs178 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "178" ;
+  prop:jahr 2008 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 77 ;
+  .
+
+ns:obs179 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "179" ;
+  prop:jahr 2009 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 73 ;
+  .
+
+ns:obs180 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "180" ;
+  prop:jahr 2010 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 90 ;
+  .
+
+ns:obs181 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "181" ;
+  prop:jahr 2011 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 81 ;
+  .
+
+ns:obs182 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "182" ;
+  prop:jahr 2012 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 81 ;
+  .
+
+ns:obs183 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "183" ;
+  prop:jahr 2013 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 70 ;
+  .
+
+ns:obs184 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "184" ;
+  prop:jahr 2014 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 92 ;
+  .
+
+ns:obs185 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "185" ;
+  prop:jahr 2015 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 96 ;
+  .
+
+ns:obs186 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "186" ;
+  prop:jahr 2016 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 94 ;
+  .
+
+ns:obs187 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "187" ;
+  prop:jahr 2017 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:value 124 ;
+  .
+
+ns:obs188 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "188" ;
+  prop:jahr 2001 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 41 ;
+  .
+
+ns:obs189 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "189" ;
+  prop:jahr 2002 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 39 ;
+  .
+
+ns:obs190 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "190" ;
+  prop:jahr 2003 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 41 ;
+  .
+
+ns:obs191 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "191" ;
+  prop:jahr 2004 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 52 ;
+  .
+
+ns:obs192 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "192" ;
+  prop:jahr 2005 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 41 ;
+  .
+
+ns:obs193 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "193" ;
+  prop:jahr 2006 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 63 ;
+  .
+
+ns:obs194 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "194" ;
+  prop:jahr 2007 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 61 ;
+  .
+
+ns:obs195 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "195" ;
+  prop:jahr 2008 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 54 ;
+  .
+
+ns:obs196 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "196" ;
+  prop:jahr 2009 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 46 ;
+  .
+
+ns:obs197 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "197" ;
+  prop:jahr 2010 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 38 ;
+  .
+
+ns:obs198 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "198" ;
+  prop:jahr 2011 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 53 ;
+  .
+
+ns:obs199 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "199" ;
+  prop:jahr 2012 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 49 ;
+  .
+
+ns:obs200 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "200" ;
+  prop:jahr 2013 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 41 ;
+  .
+
+ns:obs201 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "201" ;
+  prop:jahr 2014 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 45 ;
+  .
+
+ns:obs202 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "202" ;
+  prop:jahr 2015 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 48 ;
+  .
+
+ns:obs203 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "203" ;
+  prop:jahr 2016 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 44 ;
+  .
+
+ns:obs204 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "204" ;
+  prop:jahr 2017 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:value 44 ;
+  .
+
+ns:obs205 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "205" ;
+  prop:jahr 2001 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 114 ;
+  .
+
+ns:obs206 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "206" ;
+  prop:jahr 2002 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 93 ;
+  .
+
+ns:obs207 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "207" ;
+  prop:jahr 2003 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 96 ;
+  .
+
+ns:obs208 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "208" ;
+  prop:jahr 2004 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 94 ;
+  .
+
+ns:obs209 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "209" ;
+  prop:jahr 2005 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 70 ;
+  .
+
+ns:obs210 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "210" ;
+  prop:jahr 2006 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 68 ;
+  .
+
+ns:obs211 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "211" ;
+  prop:jahr 2007 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 82 ;
+  .
+
+ns:obs212 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "212" ;
+  prop:jahr 2008 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 67 ;
+  .
+
+ns:obs213 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "213" ;
+  prop:jahr 2009 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 66 ;
+  .
+
+ns:obs214 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "214" ;
+  prop:jahr 2010 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 77 ;
+  .
+
+ns:obs215 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "215" ;
+  prop:jahr 2011 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 76 ;
+  .
+
+ns:obs216 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "216" ;
+  prop:jahr 2012 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 58 ;
+  .
+
+ns:obs217 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "217" ;
+  prop:jahr 2013 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 70 ;
+  .
+
+ns:obs218 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "218" ;
+  prop:jahr 2014 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 68 ;
+  .
+
+ns:obs219 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "219" ;
+  prop:jahr 2015 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 66 ;
+  .
+
+ns:obs220 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "220" ;
+  prop:jahr 2016 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 93 ;
+  .
+
+ns:obs221 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "221" ;
+  prop:jahr 2017 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:value 67 ;
+  .
+
+ns:obs222 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "222" ;
+  prop:jahr 2001 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 869 ;
+  .
+
+ns:obs223 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "223" ;
+  prop:jahr 2002 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 853 ;
+  .
+
+ns:obs224 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "224" ;
+  prop:jahr 2003 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 832 ;
+  .
+
+ns:obs225 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "225" ;
+  prop:jahr 2004 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 899 ;
+  .
+
+ns:obs226 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "226" ;
+  prop:jahr 2005 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 826 ;
+  .
+
+ns:obs227 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "227" ;
+  prop:jahr 2006 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 774 ;
+  .
+
+ns:obs228 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "228" ;
+  prop:jahr 2007 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 797 ;
+  .
+
+ns:obs229 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "229" ;
+  prop:jahr 2008 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 813 ;
+  .
+
+ns:obs230 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "230" ;
+  prop:jahr 2009 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 759 ;
+  .
+
+ns:obs231 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "231" ;
+  prop:jahr 2010 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 782 ;
+  .
+
+ns:obs232 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "232" ;
+  prop:jahr 2011 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 788 ;
+  .
+
+ns:obs233 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "233" ;
+  prop:jahr 2012 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 756 ;
+  .
+
+ns:obs234 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "234" ;
+  prop:jahr 2013 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 774 ;
+  .
+
+ns:obs235 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "235" ;
+  prop:jahr 2014 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 772 ;
+  .
+
+ns:obs236 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "236" ;
+  prop:jahr 2015 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 819 ;
+  .
+
+ns:obs237 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "237" ;
+  prop:jahr 2016 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 907 ;
+  .
+
+ns:obs238 a qb:Observation ;
+  qb:dataSet ns:dataset-entwicklung_geburten_uri ;
+  rdfs:label "238" ;
+  prop:jahr 2017 ;
+  prop:sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:value 940 ;
+  .
+
