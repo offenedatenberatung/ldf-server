@@ -47,6 +47,14 @@
       "file": "data/moers-geburten.ttl"
     },
     {
+      "@id": "https://lod-moers.onrender.com/statistiken/datasets/bevoelkerung/altersgruppen/",
+      "@type": "TurtleDatasource",
+      "datasourceTitle": "Moers Statistiken Bevölkerung Altersgruppen",
+      "description": "Altersgruppen in Moers nach Sozialräumen",
+      "datasourcePath": "moers-altersgruppen",
+      "file": "data/altersstruktur_sozialraum.ttl"
+    },
+    {
       "@id": "https://lod-moers.onrender.com/sozialraum/nord/repelen/",
       "@type": "RdfaDatasource",
       "datasourceTitle": "Sozialraum Repellen",

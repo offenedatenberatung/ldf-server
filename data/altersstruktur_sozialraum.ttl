@@ -1,0 +1,1584 @@
+@base <https://lod-moers.onrender.com/dc/dataset/altersstruktur_sozialraum_uri/> .
+@prefix ns:    <https://lod-moers.onrender.com/dc/dataset/altersstruktur_sozialraum_uri/> .
+@prefix qb:    <http://purl.org/linked-data/cube#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prop:  <https://lod-moers.onrender.com/properties/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix cs:    <https://lod-moers.onrender.com/dc/dataset/altersstruktur_sozialraum_uri/cs/> .
+@prefix code:  <https://lod-moers.onrender.com/dc/dataset/altersstruktur_sozialraum_uri/code/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix org:      <http://www.w3.org/ns/org#> .
+@prefix prov:     <http://www.w3.org/ns/prov#> .
+
+ns:dsd-altersstruktur_sozialraum_uri a qb:DataStructureDefinition;
+  qb:component cs:Altersgruppen ;
+  qb:component cs:Sozialraum ;
+  qb:component cs:Einwohner .
+
+ns:dataset-altersstruktur_sozialraum_uri a qb:DataSet ;
+  rdfs:label "altersstruktur_sozialraum_uri"@de ;
+  qb:structure ns:dsd-altersstruktur_sozialraum_uri .
+
+cs:Altersgruppen a qb:ComponentSpecification ;
+  rdfs:label "Altersgruppen" ;
+  qb:dimension prop:Altersgruppen .
+
+cs:Sozialraum a qb:ComponentSpecification ;
+  rdfs:label "Sozialraum" ;
+  qb:dimension prop:Sozialraum .
+
+cs:Einwohner a qb:ComponentSpecification ;
+  rdfs:label "Einwohner" ;
+  qb:measure prop:Einwohner .
+
+prop:Altersgruppen a rdf:Property, qb:DimensionProperty ;
+  rdfs:label "Altersgruppen"@de ;
+  qb:codeList code:altersgruppen ;
+  rdfs:range code:Altersgruppen .
+
+prop:Sozialraum a rdf:Property, qb:DimensionProperty ;
+  rdfs:label "Sozialraum"@de ;
+  qb:codeList code:sozialraum ;
+  rdfs:range code:Sozialraum .
+
+prop:Einwohner a rdf:Property, qb:MeasureProperty ;
+  rdfs:label "Einwohner"@de .
+
+code:Sozialraum a rdfs:Class, owl:Class;
+  rdfs:subClassOf skos:Concept ;
+  rdfs:label "Code list for sozialraum - codelist class"@de;
+  rdfs:comment "Specifies the sozialraum for each observation";
+  rdfs:seeAlso code:sozialraum .
+
+code:sozialraum a skos:ConceptScheme;
+  skos:prefLabel "Code list for sozialraum - codelist scheme"@de;
+  rdfs:label "Code list for sozialraum - codelist scheme"@de;
+  skos:notation "CL_SOZIALRAUM";
+  skos:note "Specifies the sozialraum for each observation";
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/moers> ;
+  .
+
+code:Altersgruppen a rdfs:Class, owl:Class;
+  rdfs:subClassOf skos:Concept ;
+  rdfs:label "Code list for altersgruppen - codelist class"@de;
+  rdfs:comment "Specifies the altersgruppen for each observation";
+  rdfs:seeAlso code:altersgruppen .
+
+code:altersgruppen a skos:ConceptScheme;
+  skos:prefLabel "Code list for altersgruppen - codelist scheme"@de;
+  rdfs:label "Code list for altersgruppen - codelist scheme"@de;
+  skos:notation "CL_ALTERSGRUPPEN";
+  skos:note "Specifies the altersgruppen for each observation";
+  skos:hasTopConcept <code/altersgruppen/0_bis_2_Jahre> ;
+  skos:hasTopConcept <code/altersgruppen/3_bis_5_Jahre> ;
+  skos:hasTopConcept <code/altersgruppen/6_bis_9_Jahre> ;
+  skos:hasTopConcept <code/altersgruppen/10_bis_14_Jahre> ;
+  skos:hasTopConcept <code/altersgruppen/15_bis_17_Jahre> ;
+  skos:hasTopConcept <code/altersgruppen/18_bis_24_Jahre> ;
+  skos:hasTopConcept <code/altersgruppen/25_bis_29_Jahre> ;
+  skos:hasTopConcept <code/altersgruppen/30_bis_44_Jahre> ;
+  skos:hasTopConcept <code/altersgruppen/45_bis_59_Jahre> ;
+  skos:hasTopConcept <code/altersgruppen/60_bis_64_Jahre> ;
+  skos:hasTopConcept <code/altersgruppen/65_bis_74_Jahre> ;
+  skos:hasTopConcept <code/altersgruppen/75_bis_84_Jahre> ;
+  skos:hasTopConcept <code/altersgruppen/85_Jahre_und_älter> ;
+  .
+
+<https://lod-moers.onrender.com/sozialraum/nord/repelen/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "repelen" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "rheinkamp" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/nord/eick/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "eick" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "moers-ost" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/ost/utfort/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "utfort" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "meerbeck" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "huelsdonk" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "moers-mitte" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/mitte/vinn/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "vinn" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/ost/asberg/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "asberg" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "schwafheim" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/kapellen/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "kapellen" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/moers> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "moers" ;
+  skos:inScheme code:sozialraum .
+
+<code/altersgruppen/0_bis_2_Jahre> a skos:Concept, code:Altersgruppen;
+  skos:topConceptOf code:altersgruppen ;
+  skos:prefLabel "0_bis_2_Jahre" ;
+  skos:inScheme code:altersgruppen .
+
+<code/altersgruppen/3_bis_5_Jahre> a skos:Concept, code:Altersgruppen;
+  skos:topConceptOf code:altersgruppen ;
+  skos:prefLabel "3_bis_5_Jahre" ;
+  skos:inScheme code:altersgruppen .
+
+<code/altersgruppen/6_bis_9_Jahre> a skos:Concept, code:Altersgruppen;
+  skos:topConceptOf code:altersgruppen ;
+  skos:prefLabel "6_bis_9_Jahre" ;
+  skos:inScheme code:altersgruppen .
+
+<code/altersgruppen/10_bis_14_Jahre> a skos:Concept, code:Altersgruppen;
+  skos:topConceptOf code:altersgruppen ;
+  skos:prefLabel "10_bis_14_Jahre" ;
+  skos:inScheme code:altersgruppen .
+
+<code/altersgruppen/15_bis_17_Jahre> a skos:Concept, code:Altersgruppen;
+  skos:topConceptOf code:altersgruppen ;
+  skos:prefLabel "15_bis_17_Jahre" ;
+  skos:inScheme code:altersgruppen .
+
+<code/altersgruppen/18_bis_24_Jahre> a skos:Concept, code:Altersgruppen;
+  skos:topConceptOf code:altersgruppen ;
+  skos:prefLabel "18_bis_24_Jahre" ;
+  skos:inScheme code:altersgruppen .
+
+<code/altersgruppen/25_bis_29_Jahre> a skos:Concept, code:Altersgruppen;
+  skos:topConceptOf code:altersgruppen ;
+  skos:prefLabel "25_bis_29_Jahre" ;
+  skos:inScheme code:altersgruppen .
+
+<code/altersgruppen/30_bis_44_Jahre> a skos:Concept, code:Altersgruppen;
+  skos:topConceptOf code:altersgruppen ;
+  skos:prefLabel "30_bis_44_Jahre" ;
+  skos:inScheme code:altersgruppen .
+
+<code/altersgruppen/45_bis_59_Jahre> a skos:Concept, code:Altersgruppen;
+  skos:topConceptOf code:altersgruppen ;
+  skos:prefLabel "45_bis_59_Jahre" ;
+  skos:inScheme code:altersgruppen .
+
+<code/altersgruppen/60_bis_64_Jahre> a skos:Concept, code:Altersgruppen;
+  skos:topConceptOf code:altersgruppen ;
+  skos:prefLabel "60_bis_64_Jahre" ;
+  skos:inScheme code:altersgruppen .
+
+<code/altersgruppen/65_bis_74_Jahre> a skos:Concept, code:Altersgruppen;
+  skos:topConceptOf code:altersgruppen ;
+  skos:prefLabel "65_bis_74_Jahre" ;
+  skos:inScheme code:altersgruppen .
+
+<code/altersgruppen/75_bis_84_Jahre> a skos:Concept, code:Altersgruppen;
+  skos:topConceptOf code:altersgruppen ;
+  skos:prefLabel "75_bis_84_Jahre" ;
+  skos:inScheme code:altersgruppen .
+
+<code/altersgruppen/85_Jahre_und_älter> a skos:Concept, code:Altersgruppen;
+  skos:topConceptOf code:altersgruppen ;
+  skos:prefLabel "85_Jahre_und_älter" ;
+  skos:inScheme code:altersgruppen .
+
+ns:obs1 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "1" ;
+  prop:Altersgruppen <code/altersgruppen/0_bis_2_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:Einwohner 260 ;
+  .
+
+ns:obs2 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "2" ;
+  prop:Altersgruppen <code/altersgruppen/3_bis_5_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:Einwohner 307 ;
+  .
+
+ns:obs3 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "3" ;
+  prop:Altersgruppen <code/altersgruppen/6_bis_9_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:Einwohner 437 ;
+  .
+
+ns:obs4 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "4" ;
+  prop:Altersgruppen <code/altersgruppen/10_bis_14_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:Einwohner 546 ;
+  .
+
+ns:obs5 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "5" ;
+  prop:Altersgruppen <code/altersgruppen/15_bis_17_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:Einwohner 388 ;
+  .
+
+ns:obs6 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "6" ;
+  prop:Altersgruppen <code/altersgruppen/18_bis_24_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:Einwohner 1.108 ;
+  .
+
+ns:obs7 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "7" ;
+  prop:Altersgruppen <code/altersgruppen/25_bis_29_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:Einwohner 669 ;
+  .
+
+ns:obs8 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "8" ;
+  prop:Altersgruppen <code/altersgruppen/30_bis_44_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:Einwohner 2.163 ;
+  .
+
+ns:obs9 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "9" ;
+  prop:Altersgruppen <code/altersgruppen/45_bis_59_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:Einwohner 3.115 ;
+  .
+
+ns:obs10 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "10" ;
+  prop:Altersgruppen <code/altersgruppen/60_bis_64_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:Einwohner 765 ;
+  .
+
+ns:obs11 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "11" ;
+  prop:Altersgruppen <code/altersgruppen/65_bis_74_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:Einwohner 1.326 ;
+  .
+
+ns:obs12 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "12" ;
+  prop:Altersgruppen <code/altersgruppen/75_bis_84_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:Einwohner 941 ;
+  .
+
+ns:obs13 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "13" ;
+  prop:Altersgruppen <code/altersgruppen/85_Jahre_und_älter> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:Einwohner 202 ;
+  .
+
+ns:obs14 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "14" ;
+  prop:Altersgruppen <code/altersgruppen/0_bis_2_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:Einwohner 90 ;
+  .
+
+ns:obs15 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "15" ;
+  prop:Altersgruppen <code/altersgruppen/3_bis_5_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:Einwohner 102 ;
+  .
+
+ns:obs16 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "16" ;
+  prop:Altersgruppen <code/altersgruppen/6_bis_9_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:Einwohner 140 ;
+  .
+
+ns:obs17 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "17" ;
+  prop:Altersgruppen <code/altersgruppen/10_bis_14_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:Einwohner 206 ;
+  .
+
+ns:obs18 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "18" ;
+  prop:Altersgruppen <code/altersgruppen/15_bis_17_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:Einwohner 135 ;
+  .
+
+ns:obs19 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "19" ;
+  prop:Altersgruppen <code/altersgruppen/18_bis_24_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:Einwohner 485 ;
+  .
+
+ns:obs20 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "20" ;
+  prop:Altersgruppen <code/altersgruppen/25_bis_29_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:Einwohner 328 ;
+  .
+
+ns:obs21 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "21" ;
+  prop:Altersgruppen <code/altersgruppen/30_bis_44_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:Einwohner 713 ;
+  .
+
+ns:obs22 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "22" ;
+  prop:Altersgruppen <code/altersgruppen/45_bis_59_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:Einwohner 1.358 ;
+  .
+
+ns:obs23 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "23" ;
+  prop:Altersgruppen <code/altersgruppen/60_bis_64_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:Einwohner 288 ;
+  .
+
+ns:obs24 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "24" ;
+  prop:Altersgruppen <code/altersgruppen/65_bis_74_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:Einwohner 562 ;
+  .
+
+ns:obs25 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "25" ;
+  prop:Altersgruppen <code/altersgruppen/75_bis_84_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:Einwohner 485 ;
+  .
+
+ns:obs26 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "26" ;
+  prop:Altersgruppen <code/altersgruppen/85_Jahre_und_älter> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/> ;
+  prop:Einwohner 144 ;
+  .
+
+ns:obs27 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "27" ;
+  prop:Altersgruppen <code/altersgruppen/0_bis_2_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:Einwohner 105 ;
+  .
+
+ns:obs28 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "28" ;
+  prop:Altersgruppen <code/altersgruppen/3_bis_5_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:Einwohner 94 ;
+  .
+
+ns:obs29 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "29" ;
+  prop:Altersgruppen <code/altersgruppen/6_bis_9_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:Einwohner 138 ;
+  .
+
+ns:obs30 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "30" ;
+  prop:Altersgruppen <code/altersgruppen/10_bis_14_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:Einwohner 200 ;
+  .
+
+ns:obs31 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "31" ;
+  prop:Altersgruppen <code/altersgruppen/15_bis_17_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:Einwohner 115 ;
+  .
+
+ns:obs32 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "32" ;
+  prop:Altersgruppen <code/altersgruppen/18_bis_24_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:Einwohner 379 ;
+  .
+
+ns:obs33 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "33" ;
+  prop:Altersgruppen <code/altersgruppen/25_bis_29_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:Einwohner 294 ;
+  .
+
+ns:obs34 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "34" ;
+  prop:Altersgruppen <code/altersgruppen/30_bis_44_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:Einwohner 824 ;
+  .
+
+ns:obs35 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "35" ;
+  prop:Altersgruppen <code/altersgruppen/45_bis_59_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:Einwohner 1.253 ;
+  .
+
+ns:obs36 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "36" ;
+  prop:Altersgruppen <code/altersgruppen/60_bis_64_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:Einwohner 382 ;
+  .
+
+ns:obs37 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "37" ;
+  prop:Altersgruppen <code/altersgruppen/65_bis_74_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:Einwohner 711 ;
+  .
+
+ns:obs38 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "38" ;
+  prop:Altersgruppen <code/altersgruppen/75_bis_84_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:Einwohner 548 ;
+  .
+
+ns:obs39 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "39" ;
+  prop:Altersgruppen <code/altersgruppen/85_Jahre_und_älter> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick/> ;
+  prop:Einwohner 130 ;
+  .
+
+ns:obs40 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "40" ;
+  prop:Altersgruppen <code/altersgruppen/0_bis_2_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  prop:Einwohner 261 ;
+  .
+
+ns:obs41 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "41" ;
+  prop:Altersgruppen <code/altersgruppen/3_bis_5_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  prop:Einwohner 262 ;
+  .
+
+ns:obs42 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "42" ;
+  prop:Altersgruppen <code/altersgruppen/6_bis_9_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  prop:Einwohner 347 ;
+  .
+
+ns:obs43 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "43" ;
+  prop:Altersgruppen <code/altersgruppen/10_bis_14_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  prop:Einwohner 456 ;
+  .
+
+ns:obs44 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "44" ;
+  prop:Altersgruppen <code/altersgruppen/15_bis_17_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  prop:Einwohner 282 ;
+  .
+
+ns:obs45 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "45" ;
+  prop:Altersgruppen <code/altersgruppen/18_bis_24_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  prop:Einwohner 765 ;
+  .
+
+ns:obs46 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "46" ;
+  prop:Altersgruppen <code/altersgruppen/25_bis_29_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  prop:Einwohner 522 ;
+  .
+
+ns:obs47 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "47" ;
+  prop:Altersgruppen <code/altersgruppen/30_bis_44_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  prop:Einwohner 1.906 ;
+  .
+
+ns:obs48 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "48" ;
+  prop:Altersgruppen <code/altersgruppen/45_bis_59_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  prop:Einwohner 2.489 ;
+  .
+
+ns:obs49 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "49" ;
+  prop:Altersgruppen <code/altersgruppen/60_bis_64_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  prop:Einwohner 654 ;
+  .
+
+ns:obs50 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "50" ;
+  prop:Altersgruppen <code/altersgruppen/65_bis_74_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  prop:Einwohner 1.038 ;
+  .
+
+ns:obs51 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "51" ;
+  prop:Altersgruppen <code/altersgruppen/75_bis_84_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  prop:Einwohner 766 ;
+  .
+
+ns:obs52 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "52" ;
+  prop:Altersgruppen <code/altersgruppen/85_Jahre_und_älter> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost/> ;
+  prop:Einwohner 238 ;
+  .
+
+ns:obs53 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "53" ;
+  prop:Altersgruppen <code/altersgruppen/0_bis_2_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:Einwohner 111 ;
+  .
+
+ns:obs54 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "54" ;
+  prop:Altersgruppen <code/altersgruppen/3_bis_5_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:Einwohner 113 ;
+  .
+
+ns:obs55 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "55" ;
+  prop:Altersgruppen <code/altersgruppen/6_bis_9_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:Einwohner 206 ;
+  .
+
+ns:obs56 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "56" ;
+  prop:Altersgruppen <code/altersgruppen/10_bis_14_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:Einwohner 285 ;
+  .
+
+ns:obs57 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "57" ;
+  prop:Altersgruppen <code/altersgruppen/15_bis_17_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:Einwohner 164 ;
+  .
+
+ns:obs58 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "58" ;
+  prop:Altersgruppen <code/altersgruppen/18_bis_24_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:Einwohner 376 ;
+  .
+
+ns:obs59 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "59" ;
+  prop:Altersgruppen <code/altersgruppen/25_bis_29_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:Einwohner 199 ;
+  .
+
+ns:obs60 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "60" ;
+  prop:Altersgruppen <code/altersgruppen/30_bis_44_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:Einwohner 961 ;
+  .
+
+ns:obs61 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "61" ;
+  prop:Altersgruppen <code/altersgruppen/45_bis_59_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:Einwohner 1.362 ;
+  .
+
+ns:obs62 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "62" ;
+  prop:Altersgruppen <code/altersgruppen/60_bis_64_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:Einwohner 265 ;
+  .
+
+ns:obs63 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "63" ;
+  prop:Altersgruppen <code/altersgruppen/65_bis_74_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:Einwohner 460 ;
+  .
+
+ns:obs64 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "64" ;
+  prop:Altersgruppen <code/altersgruppen/75_bis_84_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:Einwohner 276 ;
+  .
+
+ns:obs65 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "65" ;
+  prop:Altersgruppen <code/altersgruppen/85_Jahre_und_älter> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort/> ;
+  prop:Einwohner 73 ;
+  .
+
+ns:obs66 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "66" ;
+  prop:Altersgruppen <code/altersgruppen/0_bis_2_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:Einwohner 293 ;
+  .
+
+ns:obs67 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "67" ;
+  prop:Altersgruppen <code/altersgruppen/3_bis_5_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:Einwohner 324 ;
+  .
+
+ns:obs68 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "68" ;
+  prop:Altersgruppen <code/altersgruppen/6_bis_9_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:Einwohner 494 ;
+  .
+
+ns:obs69 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "69" ;
+  prop:Altersgruppen <code/altersgruppen/10_bis_14_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:Einwohner 618 ;
+  .
+
+ns:obs70 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "70" ;
+  prop:Altersgruppen <code/altersgruppen/15_bis_17_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:Einwohner 426 ;
+  .
+
+ns:obs71 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "71" ;
+  prop:Altersgruppen <code/altersgruppen/18_bis_24_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:Einwohner 1.134 ;
+  .
+
+ns:obs72 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "72" ;
+  prop:Altersgruppen <code/altersgruppen/25_bis_29_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:Einwohner 709 ;
+  .
+
+ns:obs73 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "73" ;
+  prop:Altersgruppen <code/altersgruppen/30_bis_44_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:Einwohner 2.174 ;
+  .
+
+ns:obs74 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "74" ;
+  prop:Altersgruppen <code/altersgruppen/45_bis_59_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:Einwohner 2.603 ;
+  .
+
+ns:obs75 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "75" ;
+  prop:Altersgruppen <code/altersgruppen/60_bis_64_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:Einwohner 618 ;
+  .
+
+ns:obs76 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "76" ;
+  prop:Altersgruppen <code/altersgruppen/65_bis_74_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:Einwohner 956 ;
+  .
+
+ns:obs77 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "77" ;
+  prop:Altersgruppen <code/altersgruppen/75_bis_84_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:Einwohner 763 ;
+  .
+
+ns:obs78 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "78" ;
+  prop:Altersgruppen <code/altersgruppen/85_Jahre_und_älter> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck/> ;
+  prop:Einwohner 203 ;
+  .
+
+ns:obs79 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "79" ;
+  prop:Altersgruppen <code/altersgruppen/0_bis_2_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:Einwohner 100 ;
+  .
+
+ns:obs80 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "80" ;
+  prop:Altersgruppen <code/altersgruppen/3_bis_5_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:Einwohner 117 ;
+  .
+
+ns:obs81 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "81" ;
+  prop:Altersgruppen <code/altersgruppen/6_bis_9_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:Einwohner 161 ;
+  .
+
+ns:obs82 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "82" ;
+  prop:Altersgruppen <code/altersgruppen/10_bis_14_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:Einwohner 249 ;
+  .
+
+ns:obs83 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "83" ;
+  prop:Altersgruppen <code/altersgruppen/15_bis_17_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:Einwohner 152 ;
+  .
+
+ns:obs84 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "84" ;
+  prop:Altersgruppen <code/altersgruppen/18_bis_24_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:Einwohner 382 ;
+  .
+
+ns:obs85 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "85" ;
+  prop:Altersgruppen <code/altersgruppen/25_bis_29_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:Einwohner 249 ;
+  .
+
+ns:obs86 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "86" ;
+  prop:Altersgruppen <code/altersgruppen/30_bis_44_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:Einwohner 920 ;
+  .
+
+ns:obs87 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "87" ;
+  prop:Altersgruppen <code/altersgruppen/45_bis_59_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:Einwohner 1.375 ;
+  .
+
+ns:obs88 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "88" ;
+  prop:Altersgruppen <code/altersgruppen/60_bis_64_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:Einwohner 358 ;
+  .
+
+ns:obs89 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "89" ;
+  prop:Altersgruppen <code/altersgruppen/65_bis_74_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:Einwohner 690 ;
+  .
+
+ns:obs90 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "90" ;
+  prop:Altersgruppen <code/altersgruppen/75_bis_84_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:Einwohner 551 ;
+  .
+
+ns:obs91 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "91" ;
+  prop:Altersgruppen <code/altersgruppen/85_Jahre_und_älter> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/> ;
+  prop:Einwohner 213 ;
+  .
+
+ns:obs92 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "92" ;
+  prop:Altersgruppen <code/altersgruppen/0_bis_2_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:Einwohner 203 ;
+  .
+
+ns:obs93 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "93" ;
+  prop:Altersgruppen <code/altersgruppen/3_bis_5_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:Einwohner 193 ;
+  .
+
+ns:obs94 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "94" ;
+  prop:Altersgruppen <code/altersgruppen/6_bis_9_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:Einwohner 232 ;
+  .
+
+ns:obs95 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "95" ;
+  prop:Altersgruppen <code/altersgruppen/10_bis_14_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:Einwohner 314 ;
+  .
+
+ns:obs96 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "96" ;
+  prop:Altersgruppen <code/altersgruppen/15_bis_17_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:Einwohner 223 ;
+  .
+
+ns:obs97 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "97" ;
+  prop:Altersgruppen <code/altersgruppen/18_bis_24_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:Einwohner 678 ;
+  .
+
+ns:obs98 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "98" ;
+  prop:Altersgruppen <code/altersgruppen/25_bis_29_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:Einwohner 615 ;
+  .
+
+ns:obs99 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "99" ;
+  prop:Altersgruppen <code/altersgruppen/30_bis_44_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:Einwohner 1.871 ;
+  .
+
+ns:obs100 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "100" ;
+  prop:Altersgruppen <code/altersgruppen/45_bis_59_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:Einwohner 2.086 ;
+  .
+
+ns:obs101 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "101" ;
+  prop:Altersgruppen <code/altersgruppen/60_bis_64_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:Einwohner 615 ;
+  .
+
+ns:obs102 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "102" ;
+  prop:Altersgruppen <code/altersgruppen/65_bis_74_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:Einwohner 1.127 ;
+  .
+
+ns:obs103 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "103" ;
+  prop:Altersgruppen <code/altersgruppen/75_bis_84_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:Einwohner 839 ;
+  .
+
+ns:obs104 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "104" ;
+  prop:Altersgruppen <code/altersgruppen/85_Jahre_und_älter> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/> ;
+  prop:Einwohner 376 ;
+  .
+
+ns:obs105 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "105" ;
+  prop:Altersgruppen <code/altersgruppen/0_bis_2_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:Einwohner 238 ;
+  .
+
+ns:obs106 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "106" ;
+  prop:Altersgruppen <code/altersgruppen/3_bis_5_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:Einwohner 222 ;
+  .
+
+ns:obs107 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "107" ;
+  prop:Altersgruppen <code/altersgruppen/6_bis_9_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:Einwohner 290 ;
+  .
+
+ns:obs108 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "108" ;
+  prop:Altersgruppen <code/altersgruppen/10_bis_14_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:Einwohner 351 ;
+  .
+
+ns:obs109 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "109" ;
+  prop:Altersgruppen <code/altersgruppen/15_bis_17_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:Einwohner 236 ;
+  .
+
+ns:obs110 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "110" ;
+  prop:Altersgruppen <code/altersgruppen/18_bis_24_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:Einwohner 619 ;
+  .
+
+ns:obs111 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "111" ;
+  prop:Altersgruppen <code/altersgruppen/25_bis_29_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:Einwohner 579 ;
+  .
+
+ns:obs112 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "112" ;
+  prop:Altersgruppen <code/altersgruppen/30_bis_44_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:Einwohner 1.599 ;
+  .
+
+ns:obs113 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "113" ;
+  prop:Altersgruppen <code/altersgruppen/45_bis_59_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:Einwohner 1.92 ;
+  .
+
+ns:obs114 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "114" ;
+  prop:Altersgruppen <code/altersgruppen/60_bis_64_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:Einwohner 627 ;
+  .
+
+ns:obs115 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "115" ;
+  prop:Altersgruppen <code/altersgruppen/65_bis_74_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:Einwohner 1.13 ;
+  .
+
+ns:obs116 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "116" ;
+  prop:Altersgruppen <code/altersgruppen/75_bis_84_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:Einwohner 676 ;
+  .
+
+ns:obs117 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "117" ;
+  prop:Altersgruppen <code/altersgruppen/85_Jahre_und_älter> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn/> ;
+  prop:Einwohner 183 ;
+  .
+
+ns:obs118 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "118" ;
+  prop:Altersgruppen <code/altersgruppen/0_bis_2_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:Einwohner 307 ;
+  .
+
+ns:obs119 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "119" ;
+  prop:Altersgruppen <code/altersgruppen/3_bis_5_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:Einwohner 298 ;
+  .
+
+ns:obs120 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "120" ;
+  prop:Altersgruppen <code/altersgruppen/6_bis_9_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:Einwohner 430 ;
+  .
+
+ns:obs121 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "121" ;
+  prop:Altersgruppen <code/altersgruppen/10_bis_14_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:Einwohner 616 ;
+  .
+
+ns:obs122 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "122" ;
+  prop:Altersgruppen <code/altersgruppen/15_bis_17_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:Einwohner 426 ;
+  .
+
+ns:obs123 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "123" ;
+  prop:Altersgruppen <code/altersgruppen/18_bis_24_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:Einwohner 1.107 ;
+  .
+
+ns:obs124 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "124" ;
+  prop:Altersgruppen <code/altersgruppen/25_bis_29_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:Einwohner 670 ;
+  .
+
+ns:obs125 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "125" ;
+  prop:Altersgruppen <code/altersgruppen/30_bis_44_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:Einwohner 2.453 ;
+  .
+
+ns:obs126 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "126" ;
+  prop:Altersgruppen <code/altersgruppen/45_bis_59_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:Einwohner 3.488 ;
+  .
+
+ns:obs127 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "127" ;
+  prop:Altersgruppen <code/altersgruppen/60_bis_64_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:Einwohner 971 ;
+  .
+
+ns:obs128 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "128" ;
+  prop:Altersgruppen <code/altersgruppen/65_bis_74_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:Einwohner 1.623 ;
+  .
+
+ns:obs129 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "129" ;
+  prop:Altersgruppen <code/altersgruppen/75_bis_84_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:Einwohner 1.039 ;
+  .
+
+ns:obs130 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "130" ;
+  prop:Altersgruppen <code/altersgruppen/85_Jahre_und_älter> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg/> ;
+  prop:Einwohner 223 ;
+  .
+
+ns:obs131 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "131" ;
+  prop:Altersgruppen <code/altersgruppen/0_bis_2_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:Einwohner 124 ;
+  .
+
+ns:obs132 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "132" ;
+  prop:Altersgruppen <code/altersgruppen/3_bis_5_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:Einwohner 181 ;
+  .
+
+ns:obs133 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "133" ;
+  prop:Altersgruppen <code/altersgruppen/6_bis_9_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:Einwohner 212 ;
+  .
+
+ns:obs134 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "134" ;
+  prop:Altersgruppen <code/altersgruppen/10_bis_14_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:Einwohner 278 ;
+  .
+
+ns:obs135 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "135" ;
+  prop:Altersgruppen <code/altersgruppen/15_bis_17_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:Einwohner 178 ;
+  .
+
+ns:obs136 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "136" ;
+  prop:Altersgruppen <code/altersgruppen/18_bis_24_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:Einwohner 405 ;
+  .
+
+ns:obs137 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "137" ;
+  prop:Altersgruppen <code/altersgruppen/25_bis_29_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:Einwohner 297 ;
+  .
+
+ns:obs138 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "138" ;
+  prop:Altersgruppen <code/altersgruppen/30_bis_44_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:Einwohner 1.242 ;
+  .
+
+ns:obs139 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "139" ;
+  prop:Altersgruppen <code/altersgruppen/45_bis_59_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:Einwohner 1.834 ;
+  .
+
+ns:obs140 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "140" ;
+  prop:Altersgruppen <code/altersgruppen/60_bis_64_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:Einwohner 518 ;
+  .
+
+ns:obs141 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "141" ;
+  prop:Altersgruppen <code/altersgruppen/65_bis_74_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:Einwohner 1.017 ;
+  .
+
+ns:obs142 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "142" ;
+  prop:Altersgruppen <code/altersgruppen/75_bis_84_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:Einwohner 611 ;
+  .
+
+ns:obs143 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "143" ;
+  prop:Altersgruppen <code/altersgruppen/85_Jahre_und_älter> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/> ;
+  prop:Einwohner 233 ;
+  .
+
+ns:obs144 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "144" ;
+  prop:Altersgruppen <code/altersgruppen/0_bis_2_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:Einwohner 230 ;
+  .
+
+ns:obs145 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "145" ;
+  prop:Altersgruppen <code/altersgruppen/3_bis_5_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:Einwohner 240 ;
+  .
+
+ns:obs146 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "146" ;
+  prop:Altersgruppen <code/altersgruppen/6_bis_9_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:Einwohner 395 ;
+  .
+
+ns:obs147 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "147" ;
+  prop:Altersgruppen <code/altersgruppen/10_bis_14_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:Einwohner 642 ;
+  .
+
+ns:obs148 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "148" ;
+  prop:Altersgruppen <code/altersgruppen/15_bis_17_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:Einwohner 413 ;
+  .
+
+ns:obs149 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "149" ;
+  prop:Altersgruppen <code/altersgruppen/18_bis_24_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:Einwohner 741 ;
+  .
+
+ns:obs150 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "150" ;
+  prop:Altersgruppen <code/altersgruppen/25_bis_29_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:Einwohner 442 ;
+  .
+
+ns:obs151 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "151" ;
+  prop:Altersgruppen <code/altersgruppen/30_bis_44_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:Einwohner 2.063 ;
+  .
+
+ns:obs152 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "152" ;
+  prop:Altersgruppen <code/altersgruppen/45_bis_59_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:Einwohner 2.891 ;
+  .
+
+ns:obs153 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "153" ;
+  prop:Altersgruppen <code/altersgruppen/60_bis_64_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:Einwohner 684 ;
+  .
+
+ns:obs154 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "154" ;
+  prop:Altersgruppen <code/altersgruppen/65_bis_74_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:Einwohner 1.26 ;
+  .
+
+ns:obs155 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "155" ;
+  prop:Altersgruppen <code/altersgruppen/75_bis_84_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:Einwohner 1.027 ;
+  .
+
+ns:obs156 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "156" ;
+  prop:Altersgruppen <code/altersgruppen/85_Jahre_und_älter> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen/> ;
+  prop:Einwohner 245 ;
+  .
+
+ns:obs157 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "157" ;
+  prop:Altersgruppen <code/altersgruppen/0_bis_2_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:Einwohner 2.322 ;
+  .
+
+ns:obs158 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "158" ;
+  prop:Altersgruppen <code/altersgruppen/3_bis_5_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:Einwohner 2.453 ;
+  .
+
+ns:obs159 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "159" ;
+  prop:Altersgruppen <code/altersgruppen/6_bis_9_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:Einwohner 3.482 ;
+  .
+
+ns:obs160 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "160" ;
+  prop:Altersgruppen <code/altersgruppen/10_bis_14_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:Einwohner 4.761 ;
+  .
+
+ns:obs161 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "161" ;
+  prop:Altersgruppen <code/altersgruppen/15_bis_17_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:Einwohner 3.138 ;
+  .
+
+ns:obs162 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "162" ;
+  prop:Altersgruppen <code/altersgruppen/18_bis_24_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:Einwohner 8.179 ;
+  .
+
+ns:obs163 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "163" ;
+  prop:Altersgruppen <code/altersgruppen/25_bis_29_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:Einwohner 5.573 ;
+  .
+
+ns:obs164 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "164" ;
+  prop:Altersgruppen <code/altersgruppen/30_bis_44_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:Einwohner 18.889 ;
+  .
+
+ns:obs165 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "165" ;
+  prop:Altersgruppen <code/altersgruppen/45_bis_59_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:Einwohner 25.774 ;
+  .
+
+ns:obs166 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "166" ;
+  prop:Altersgruppen <code/altersgruppen/60_bis_64_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:Einwohner 6.745 ;
+  .
+
+ns:obs167 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "167" ;
+  prop:Altersgruppen <code/altersgruppen/65_bis_74_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:Einwohner 11.9 ;
+  .
+
+ns:obs168 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "168" ;
+  prop:Altersgruppen <code/altersgruppen/75_bis_84_Jahre> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:Einwohner 8.522 ;
+  .
+
+ns:obs169 a qb:Observation ;
+  qb:dataSet ns:dataset-altersstruktur_sozialraum_uri ;
+  rdfs:label "169" ;
+  prop:Altersgruppen <code/altersgruppen/85_Jahre_und_älter> ;
+  prop:Sozialraum <https://lod-moers.onrender.com/moers> ;
+  prop:Einwohner 2.463 ;
+  .
+
