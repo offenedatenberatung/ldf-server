@@ -12,7 +12,7 @@
       "datasourceTitle": "GovData Metadata",
       "description": "govdata.de Metadata SPARQL",
       "datasourcePath": "govdata-sparql",
-      "sparqlEndpoint": "https://www.govdata.de/sparql"
+      "sparqlEndpoint": "https://govdata.de/sparql"
     },
     {
       "@id": "http://dcat-ap.de/def/politicalGeocoding/districtKey",
@@ -57,10 +57,26 @@
     {
       "@id": "https://lod-moers.onrender.com/sozialraum/nord/repelen/",
       "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Nord",
+      "description": "",
+      "datasourcePath": "moers-repellen",
+      "file": "https://lod-moers.onrender.com/sozialraum/nord/"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/nord/repelen/",
+      "@type": "RdfaDatasource",
       "datasourceTitle": "Sozialraum Repellen",
       "description": "",
       "datasourcePath": "moers-repellen",
       "file": "https://lod-moers.onrender.com/sozialraum/nord/repelen/"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/",
+      "@type": "CompositeDatasource",
+      "datasourceTitle": "Sozialräume Moers",
+      "description": "",
+      "datasourcePath": "moers-sozialraeume",
+			"compose": ["https://lod-moers.onrender.com/sozialraum/nord/repelen/", "https://lod-moers.onrender.com/sozialraum/nord/"]
     }
   ]
 }
