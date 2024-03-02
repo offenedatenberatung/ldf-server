@@ -55,11 +55,11 @@
       "file": "data/altersstruktur_sozialraum.ttl"
     },
     {
-      "@id": "https://lod-moers.onrender.com/sozialraum/nord/repelen/",
+      "@id": "https://lod-moers.onrender.com/sozialraum/nord/",
       "@type": "RdfaDatasource",
       "datasourceTitle": "Sozialraum Nord",
       "description": "",
-      "datasourcePath": "moers-repellen",
+      "datasourcePath": "moers-nord",
       "file": "https://lod-moers.onrender.com/sozialraum/nord/"
     },
     {
@@ -75,7 +75,7 @@
       "@type": "CompositeDatasource",
       "datasourceTitle": "Sozialräume Moers",
       "description": "",
-      "datasourcePath": "moers-sozialraeume",
+      "datasourcePath": "moers-sozialraum",
 			"compose": ["https://lod-moers.onrender.com/sozialraum/nord/repelen/", "https://lod-moers.onrender.com/sozialraum/nord/"]
     }
   ]
