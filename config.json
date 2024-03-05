@@ -72,7 +72,7 @@
     },
     {
       "@id": "https://lod-moers.onrender.com/statistiken/datasets/bevoelkerung/sozialraum",
-      "@type": "RdfaDatasource",
+      "@type": "TurtleDatasource",
       "datasourceTitle": "Moers Statistiken Bevölkerung Sozialraum",
       "description": "",
       "datasourcePath": "moers-bevoelkerung-sozialraum",
