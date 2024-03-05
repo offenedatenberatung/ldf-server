@@ -71,6 +71,14 @@
       "file": "https://lod-moers.onrender.com/sozialraum/nord/repelen/"
     },
     {
+      "@id": "https://lod-moers.onrender.com/statistiken/datasets/bevoelkerung/sozialraum",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Moers Statistiken Bevölkerung Sozialraum",
+      "description": "",
+      "datasourcePath": "moers-bevoelkerung-sozialraum",
+      "file": "data/bevoelkerung_sozialraum.ttl"
+    },
+    {
       "@id": "https://lod-moers.onrender.com/sozialraum/",
       "@type": "CompositeDatasource",
       "datasourceTitle": "Sozialräume Moers",

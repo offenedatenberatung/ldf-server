@@ -1,0 +1,332 @@
+@base <https://lod-moers.onrender.com/dc/dataset/einwohner_sozialraum/> .
+@prefix ns:    <https://lod-moers.onrender.com/dc/dataset/einwohner_sozialraum/> .
+@prefix qb:    <http://purl.org/linked-data/cube#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prop:  <https://lod-moers.onrender.com/properties/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix cs:    <https://lod-moers.onrender.com/dc/dataset/einwohner_sozialraum/cs/> .
+@prefix code:  <https://lod-moers.onrender.com/dc/dataset/einwohner_sozialraum/code/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix org:      <http://www.w3.org/ns/org#> .
+@prefix prov:     <http://www.w3.org/ns/prov#> .
+
+ns:dsd-einwohner_sozialraum a qb:DataStructureDefinition;
+  qb:component cs:jahr ;
+  qb:component cs:sozialraum ;
+  qb:component cs:einwohner .
+
+ns:dataset-einwohner_sozialraum a qb:DataSet ;
+  rdfs:label "einwohner_sozialraum"@de ;
+  qb:structure ns:dsd-einwohner_sozialraum .
+
+cs:jahr a qb:ComponentSpecification ;
+  rdfs:label "jahr" ;
+  qb:dimension prop:jahr .
+
+cs:sozialraum a qb:ComponentSpecification ;
+  rdfs:label "sozialraum" ;
+  qb:dimension prop:sozialraum .
+
+cs:einwohner a qb:ComponentSpecification ;
+  rdfs:label "einwohner" ;
+  qb:measure prop:einwohner .
+
+prop:jahr a rdf:Property, qb:DimensionProperty ;
+  rdfs:label "jahr"@de .
+
+prop:sozialraum a rdf:Property, qb:DimensionProperty ;
+  rdfs:label "sozialraum"@de ;
+  qb:codeList code:sozialraum ;
+  rdfs:range code:Sozialraum .
+
+prop:einwohner a rdf:Property, qb:MeasureProperty ;
+  rdfs:label "einwohner"@de .
+
+code:Sozialraum a rdfs:Class, owl:Class;
+  rdfs:subClassOf skos:Concept ;
+  rdfs:label "Code list for sozialraum - codelist class"@de;
+  rdfs:comment "Specifies the sozialraum for each observation";
+  rdfs:seeAlso code:sozialraum .
+
+code:sozialraum a skos:ConceptScheme;
+  skos:prefLabel "Code list for sozialraum - codelist scheme"@de;
+  rdfs:label "Code list for sozialraum - codelist scheme"@de;
+  skos:notation "CL_SOZIALRAUM";
+  skos:note "Specifies the sozialraum for each observation";
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/nord/eick> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/moers-ost> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/utfort> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/meerbeck> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/mitte/vinn> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/ost/asberg> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim> ;
+  skos:hasTopConcept <https://lod-moers.onrender.com/sozialraum/kapellen> ;
+  .
+
+<https://lod-moers.onrender.com/sozialraum/nord/repelen/> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "repelen" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/nord/rheinkamp> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "rheinkamp" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/nord/eick> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "eick" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/ost/moers-ost> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "moers-ost" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/ost/utfort> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "utfort" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/ost/meerbeck> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "meerbeck" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "huelsdonk" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "moers-mitte" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/mitte/vinn> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "vinn" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/ost/asberg> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "asberg" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/mitte/schwafheim> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "schwafheim" ;
+  skos:inScheme code:sozialraum .
+
+<https://lod-moers.onrender.com/sozialraum/kapellen> a skos:Concept, code:Sozialraum;
+  skos:topConceptOf code:sozialraum ;
+  skos:prefLabel "kapellen" ;
+  skos:inScheme code:sozialraum .
+
+ns:obs1 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "1" ;
+  prop:jahr 2023 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:einwohner 12217 ;
+  .
+
+ns:obs2 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "2" ;
+  prop:jahr 2022 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/repelen/> ;
+  prop:einwohner 12172 ;
+  .
+
+ns:obs3 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "3" ;
+  prop:jahr 2023 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp> ;
+  prop:einwohner 4607 ;
+  .
+
+ns:obs4 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "4" ;
+  prop:jahr 2022 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/rheinkamp> ;
+  prop:einwohner 4604 ;
+  .
+
+ns:obs5 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "5" ;
+  prop:jahr 2023 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick> ;
+  prop:einwohner 5305 ;
+  .
+
+ns:obs6 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "6" ;
+  prop:jahr 2022 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/nord/eick> ;
+  prop:einwohner 5318 ;
+  .
+
+ns:obs7 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "7" ;
+  prop:jahr 2023 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost> ;
+  prop:einwohner 11233 ;
+  .
+
+ns:obs8 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "8" ;
+  prop:jahr 2022 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/moers-ost> ;
+  prop:einwohner 11204 ;
+  .
+
+ns:obs9 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "9" ;
+  prop:jahr 2023 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort> ;
+  prop:einwohner 5048 ;
+  .
+
+ns:obs10 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "10" ;
+  prop:jahr 2022 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/utfort> ;
+  prop:einwohner 5066 ;
+  .
+
+ns:obs11 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "11" ;
+  prop:jahr 2023 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck> ;
+  prop:einwohner 11722 ;
+  .
+
+ns:obs12 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "12" ;
+  prop:jahr 2022 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/meerbeck> ;
+  prop:einwohner 11566 ;
+  .
+
+ns:obs13 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "13" ;
+  prop:jahr 2023 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk> ;
+  prop:einwohner 5608 ;
+  .
+
+ns:obs14 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "14" ;
+  prop:jahr 2022 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk> ;
+  prop:einwohner 5560 ;
+  .
+
+ns:obs15 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "15" ;
+  prop:jahr 2023 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte> ;
+  prop:einwohner 10818 ;
+  .
+
+ns:obs16 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "16" ;
+  prop:jahr 2022 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte> ;
+  prop:einwohner 10596 ;
+  .
+
+ns:obs17 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "17" ;
+  prop:jahr 2023 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn> ;
+  prop:einwohner 9621 ;
+  .
+
+ns:obs18 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "18" ;
+  prop:jahr 2022 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/vinn> ;
+  prop:einwohner 9618 ;
+  .
+
+ns:obs19 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "19" ;
+  prop:jahr 2023 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg> ;
+  prop:einwohner 13880 ;
+  .
+
+ns:obs20 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "20" ;
+  prop:jahr 2022 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/ost/asberg> ;
+  prop:einwohner 13914 ;
+  .
+
+ns:obs21 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "21" ;
+  prop:jahr 2023 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim> ;
+  prop:einwohner 7358 ;
+  .
+
+ns:obs22 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "22" ;
+  prop:jahr 2022 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/mitte/schwafheim> ;
+  prop:einwohner 7385 ;
+  .
+
+ns:obs23 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "23" ;
+  prop:jahr 2023 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen> ;
+  prop:einwohner 11219 ;
+  .
+
+ns:obs24 a qb:Observation ;
+  qb:dataSet ns:dataset-einwohner_sozialraum ;
+  rdfs:label "24" ;
+  prop:jahr 2022 ;
+  prop:sozialraum <https://lod-moers.onrender.com/sozialraum/kapellen> ;
+  prop:einwohner 11360 ;
+  .
+
+ns:dataset-einwohner_sozialraum rdfs:label "Einwohner nach Sozialraum von 2022-2023";
+  dct:title "Einwohner nach Sozialraum von 2022-2023";
+  dct:creator "Stadt Moers";
+  rdfs:comment "";
+  dct:description "";
+  dct:issued "2024-03-05"^^xsd:date.
+
