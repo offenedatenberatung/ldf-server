@@ -59,16 +59,152 @@
       "@type": "RdfaDatasource",
       "datasourceTitle": "Sozialraum Nord",
       "description": "",
+			"hide": true,
       "datasourcePath": "moers-nord",
-      "file": "https://lod-moers.onrender.com/sozialraum/nord/"
+      "file": "https://lod-moers.onrender.com/sozialraum/nord"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Rheinkamp",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers-rheinkamp",
+      "file": "https://lod-moers.onrender.com/sozialraum/nord/rheinkamp"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/nord/eick/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Eick",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers-eick",
+      "file": "https://lod-moers.onrender.com/sozialraum/nord/eick"
     },
     {
       "@id": "https://lod-moers.onrender.com/sozialraum/nord/repelen/",
       "@type": "RdfaDatasource",
       "datasourceTitle": "Sozialraum Repellen",
       "description": "",
-      "datasourcePath": "moers-repellen",
-      "file": "https://lod-moers.onrender.com/sozialraum/nord/repelen/"
+			"hide": true,
+      "datasourcePath": "moers-repelen",
+      "file": "https://lod-moers.onrender.com/sozialraum/nord/repelen"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/ost/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Ost",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers-ost",
+      "file": "https://lod-moers.onrender.com/sozialraum/ost"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/ost/moers-ost/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Ost",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers-moers-ost",
+      "file": "https://lod-moers.onrender.com/sozialraum/ost/moers-ost"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/ost/utfort/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Utfort",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers-utfort",
+      "file": "https://lod-moers.onrender.com/sozialraum/ost/utfort"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/ost/meerbeck/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Meerbeck",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers-merbeck",
+      "file": "https://lod-moers.onrender.com/sozialraum/ost/meerbeck"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/ost/asberg/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Asberg",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers-asberg",
+      "file": "https://lod-moers.onrender.com/sozialraum/ost/asberg"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/mitte/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Mitte",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers-mitte",
+      "file": "https://lod-moers.onrender.com/sozialraum/mitte"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Hülsdonk",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers-mitte-huelsdonk",
+      "file": "https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Mitte",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers-mitte-moers-mitte",
+      "file": "https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/mitte/vinn/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Vinn",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers-mitte-vinn",
+      "file": "https://lod-moers.onrender.com/sozialraum/mitte/vinn"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Schwafheim",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers-mitte-schwafheim",
+      "file": "https://lod-moers.onrender.com/sozialraum/mitte/schwafheim"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/kapellen/",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Sozialraum Kapellen",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers-kapellen",
+      "file": "https://lod-moers.onrender.com/sozialraum/kapellen"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/moers",
+      "@type": "RdfaDatasource",
+      "datasourceTitle": "Stadt Moers",
+      "description": "",
+			"hide": true,
+      "datasourcePath": "moers",
+      "file": "https://lod-moers.onrender.com/moers"
+    },
+    {
+      "@id": "https://lod-moers.onrender.com/sozialraum/",
+      "@type": "CompositeDatasource",
+      "datasourceTitle": "Sozialräume Moers",
+      "description": "",
+      "datasourcePath": "moers-sozialraum",
+			"compose": ["https://lod-moers.onrender.com/sozialraum/ost/", "https://lod-moers.onrender.com/sozialraum/nord/", "https://lod-moers.onrender.com/sozialraum/mitte/", "https://lod-moers.onrender.com/sozialraum/nord/repelen/", "https://lod-moers.onrender.com/sozialraum/nord/rheinkamp/", "https://lod-moers.onrender.com/sozialraum/nord/eick/", "https://lod-moers.onrender.com/sozialraum/ost/moers-ost/", "https://lod-moers.onrender.com/sozialraum/ost/utfort/", "https://lod-moers.onrender.com/sozialraum/ost/meerbeck/", "https://lod-moers.onrender.com/sozialraum/mitte/huelsdonk/", "https://lod-moers.onrender.com/sozialraum/mitte/moers-mitte/", "https://lod-moers.onrender.com/sozialraum/mitte/vinn/", "https://lod-moers.onrender.com/sozialraum/ost/asberg/", "https://lod-moers.onrender.com/sozialraum/mitte/schwafheim/", "https://lod-moers.onrender.com/sozialraum/kapellen/"]
     },
     {
       "@id": "https://lod-moers.onrender.com/statistiken/datasets/bevoelkerung/sozialraum",
@@ -77,14 +213,6 @@
       "description": "",
       "datasourcePath": "moers-bevoelkerung-sozialraum",
       "file": "data/bevoelkerung_sozialraum.ttl"
-    },
-    {
-      "@id": "https://lod-moers.onrender.com/sozialraum/",
-      "@type": "CompositeDatasource",
-      "datasourceTitle": "Sozialräume Moers",
-      "description": "",
-      "datasourcePath": "moers-sozialraum",
-			"compose": ["https://lod-moers.onrender.com/sozialraum/nord/repelen/", "https://lod-moers.onrender.com/sozialraum/nord/"]
     }
   ]
 }
